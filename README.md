@@ -12,4 +12,4 @@ https://xd.adobe.com/view/fcc5b68c-1271-490b-bb18-8f548361f4a2-a996/
 https://trello.com/invite/b/fegndzMo/c024210f0bb277179f0f37f25e9ade99/proyecto-final
 
 #### Modelo físico del proyecto
-<img src="./hito_diseño/Modelo_Físico.png" alt="Modelo físico del proyecto" />
+![Modelo Físico proyecto.](https://raw.githubusercontent.com/Deyna-5/Proyecto-final-Ruby-on-Rails/master/Hito_diseño/Modelo_Físico.png)
