@@ -1,8 +1,8 @@
 User.destroy_all
 20.times do 
        User.create(
-              name: Faker::Name.name ,
-              address: Faker::Address.street_address
+              name: Faker::Name.name,
+              address: Faker::Address.street_address,
               email: Faker::Internet.email,
               password: Faker::Internet.password(min_length: 10, max_length: 20),
               admin: false
