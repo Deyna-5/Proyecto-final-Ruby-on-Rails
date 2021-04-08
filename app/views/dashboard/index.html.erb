@@ -42,7 +42,7 @@
                             <%else%>
                             <td> Usuario</td>
                             <%end%> 
-                            <td> <%= link_to "Eliminar usuario", delete_user_path(user), method: :delete, data: {confirm: "Seguro desea eliminar este usuario?"} %> </td>
+                            <td> <%= link_to "X", delete_user_path(user), method: :delete, data: {confirm: "Seguro desea eliminar este usuario?"} %> </td>
                             <td> <%= link_to "X", become_admin_path(user) %> </td>
                      </tr>
                      <%end%>
