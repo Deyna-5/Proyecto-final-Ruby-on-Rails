@@ -1,1 +1,8 @@
-<h1>Hola!</h1>
+<% if current_user.admin == true %>
+
+       <div>
+       <p>¡Hola! Bienvenido administrador <%= current_user.name %></p>
+       <%= link_to "Panel de control", dashboard_path %>
+       </div>
+
+<%end%>

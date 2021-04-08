@@ -1,0 +1,48 @@
+<h1>Listado de productos</h1>
+
+<table class="table">
+       <thead>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th colspan="3">Administrar</th>
+       </thead>
+       <tbody>
+              <% @products.each do |product| %>
+              <tr>
+                     <td> <%= product.name %> </td>
+                     <td> <%= product.description %> </td>
+                     <td> <%= product.price %> </td>
+                     <td> <%= link_to "Editar producto", edit_product_path(product)%> </td>
+                     <td> <%= link_to "Eliminar producto", product, method: :delete %> </td>
+              </tr>
+              <%end%>
+       </tbody>
+</table>
+
+<h1>Listado de usuarios</h1>
+<table class="table">
+       <thead>
+              <th>Foto de perfil</th>
+              <th>Nombre</th>
+              <th>Direccion</th>
+              <th>Correo electornico</th>
+              <th>Rol</th>
+              <th colspan="3">Administrar</th>
+       </thead>
+       <tbody>
+              <% @users.each do |user| %>
+              <tr>
+                     <td> FOTO DE PERFIL(colocoar luego) </td>
+                     <td> <%= user.name %> </td>
+                     <td> <%= user.address %> </td>
+                     <td> <%= user.email %> </td>
+                     <% if user.admin == true %>
+                     <td> Administrador </td>
+                     <%else%>
+                     <td> Usuario</td>
+                     <%end%> 
+              </tr>
+              <%end%>
+       </tbody>
+</table>
