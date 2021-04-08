@@ -9,6 +9,13 @@ User.destroy_all
        )
 end
 
+User.create(
+       name: "Admin principal",
+       address: "Admin@gmail.com",
+       password: "password",
+       admin: true
+)
+
 Product.destroy_all
 Product.create(
        [
