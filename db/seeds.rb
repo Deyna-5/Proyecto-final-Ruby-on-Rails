@@ -11,7 +11,7 @@ end
 
 User.create(
        name: "Admin principal",
-       address: "Admin@gmail.com",
+       email: "Admin@gmail.com",
        password: "password",
        admin: true
 )
