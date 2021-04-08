@@ -1,0 +1,33 @@
+/* Navbar entero*/
+#navbar{
+       background-color: #E19EEB;
+       position: fixed;
+       width: 100%;
+       top: 0px;
+}
+/* Links de registro y acceso */
+#login-logout{
+       position: relative;
+       right: -880px;
+}
+/* Posicion de los links del navbar */
+.navbar-nav{
+       margin-left: 50px;
+}
+/* Links de registro y acceso */
+.sessions{
+       color: dimgray;
+}
+.sessions:hover{
+       color: black;
+       text-decoration: none;
+}
+/* Links del navbar */
+.nav-link:hover{
+       color: black;
+}
+
+/*AREA DEL LOG UP*/
+.smallp{
+       font-size: 15px;
+}

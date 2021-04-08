@@ -1,0 +1,51 @@
+<div class="jumbotron bg-light container">
+<h2 class="text-center">Registrate</h2>
+<p class="text-muted text-center">Si deseas comprar o contratar nuestros servicios primero debes registrarte</p>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="field my-3">
+  <%= f.label :avatar, "Agrege su foto de perfil" %> <br>
+  <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field my-3">
+    <%= f.label :name, "Nombre"  %> <br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field my-3">
+    <%= f.label :address, "Direccion"  %> <br>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field my-3">
+    <%= f.label :email, "Dirección de correo electrónico" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field my-3">
+    <%= f.label :password, "Contraseña" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field my-3">
+    <%= f.label :password_confirmation, "Confirmacion de la contraseña" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions my-3">
+    <%= f.submit "Crear cuenta", class: "btn btn-light" %>
+  </div>
+<% end %>
+
+  <div class="smallp mt-3">
+    <p class="text-muted d-inline ml-2">Si ya tienes una cuenta puedes ingresar con este botón</p>
+    <%= render "users/shared/links" %>
+  </div>
+
+</div>

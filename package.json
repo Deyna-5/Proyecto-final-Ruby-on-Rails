@@ -1,5 +1,7 @@
 {
   "name": "guarapita",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  }
 }
