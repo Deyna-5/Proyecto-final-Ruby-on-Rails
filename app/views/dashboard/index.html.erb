@@ -1,48 +1,55 @@
-<h1>Listado de productos</h1>
+<% if current_user.admin == true %>
+       <%= link_to "Agregar un nuevo producto a la página", new_product_path, class: "btn btn-light" %>
+       <h2 class="text-center my-5">Listado de productos</h2>
+       <table class="table">
+              <thead>
+                     <th>Nombre</th>
+                     <th>Descripcion</th>
+                     <th>Precio</th>
+                     <th colspan="3">Administrar</th>
+              </thead>
+              <tbody>
+                     <% @products.each do |product| %>
+                     <tr>
+                            <td> <%= product.name %> </td>
+                            <td> <%= product.description %> </td>
+                            <td> <%= product.price %> </td>
+                            <td> <%= link_to "Editar producto", edit_product_path(product)%> </td>
+                            <td> <%= link_to "Eliminar producto", product, method: :delete, data: {confirm: "¿Seguro desea eliminar este producto?"} %> </td>
+                     </tr>
+                     <%end%>
+              </tbody>
+       </table>
 
-<table class="table">
-       <thead>
-              <th>Nombre</th>
-              <th>Descripcion</th>
-              <th>Precio</th>
-              <th colspan="3">Administrar</th>
-       </thead>
-       <tbody>
-              <% @products.each do |product| %>
-              <tr>
-                     <td> <%= product.name %> </td>
-                     <td> <%= product.description %> </td>
-                     <td> <%= product.price %> </td>
-                     <td> <%= link_to "Editar producto", edit_product_path(product)%> </td>
-                     <td> <%= link_to "Eliminar producto", product, method: :delete %> </td>
-              </tr>
-              <%end%>
-       </tbody>
-</table>
-
-<h1>Listado de usuarios</h1>
-<table class="table">
-       <thead>
-              <th>Foto de perfil</th>
-              <th>Nombre</th>
-              <th>Direccion</th>
-              <th>Correo electornico</th>
-              <th>Rol</th>
-              <th colspan="3">Administrar</th>
-       </thead>
-       <tbody>
-              <% @users.each do |user| %>
-              <tr>
-                     <td> FOTO DE PERFIL(colocoar luego) </td>
-                     <td> <%= user.name %> </td>
-                     <td> <%= user.address %> </td>
-                     <td> <%= user.email %> </td>
-                     <% if user.admin == true %>
-                     <td> Administrador </td>
-                     <%else%>
-                     <td> Usuario</td>
-                     <%end%> 
-              </tr>
-              <%end%>
-       </tbody>
-</table>
+       <h2 class="text-center my-5">Listado de usuarios</h2 >
+       <table class="table">
+              <thead>
+                     <th>Nombre</th>
+                     <th>Direccion</th>
+                     <th>Correo electornico</th>
+                     <th>Rol</th>
+                     <th>Eliminar</th>
+                     <th>Permisos</th>
+              </thead>
+              <tbody>
+                     <% @users.each do |user| %>
+                     <tr>
+                            <td> <%= user.name %> </td>
+                            <td> <%= user.address %> </td>
+                            <td> <%= user.email %> </td>
+                            <% if user.admin == true %>
+                            <td> Administrador </td>
+                            <%else%>
+                            <td> Usuario</td>
+                            <%end%> 
+                            <td> <%= link_to "Eliminar usuario", delete_user_path(user), method: :delete, data: {confirm: "Seguro desea eliminar este usuario?"} %> </td>
+                            <td> <%= link_to "X", become_admin_path(user) %> </td>
+                     </tr>
+                     <%end%>
+              </tbody>
+       </table>
+<% else %>
+       <h1>No tienes autorizacion para estar aca</h1>
+       <p class="text-muted">Regresa a la página principal con este link</p>
+       <%= Link_to root_path "Volver", class: "btn btn-light" %>
+<%end%>

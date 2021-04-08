@@ -1,6 +1,13 @@
-<h1>Editing Product</h1>
+<% if current_user.admin == true %>
+       <h1 class="text-center">Editar producto</h1>
+       <div class="jumbotron bg-light">
+       <%= render 'form', product: @product %>
+       <%= link_to 'Volver atras', dashboard_path, class: "btn btn-light mt-4" %>
+       </div>
+<% else %>
+       <h1>No tienes autorizacion para estar aca</h1>
+       <p class="text-muted">Regresa a la página principal con este link</p>
+       <%= Link_to root_path "Volver", class: "btn btn-light" %>
+<% end %>
 
-<%= render 'form', product: @product %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>

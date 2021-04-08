@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   def show
   end
@@ -16,7 +17,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: "El producto fue creado con éxito" }
+        format.html { redirect_to dashboard_path, notice: "El producto fue creado con éxito" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -26,7 +27,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: "El producto fue actualizado con éxito" }
+        format.html { redirect_to dashboard_path, notice: "El producto fue actualizado con éxito" }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -36,7 +37,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: "El producto fué eliminado con éxito" }
+      format.html { redirect_to dashboard_path, notice: "El producto fué eliminado con éxito" }
     end
   end
 
