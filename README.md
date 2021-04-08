@@ -2,7 +2,7 @@
 ## Hito 1: Diseño.
 ------
 #### Link para la aplicacion en heroku: 
-https://boiling-ridge-63191.herokuapp.com/
+https://desolate-meadow-74230.herokuapp.com/
 
 #### Link para la maqueta Adobe XD:
 https://xd.adobe.com/view/ad12b4ef-f4cf-4d18-965a-3efab7e59f96-f841/
