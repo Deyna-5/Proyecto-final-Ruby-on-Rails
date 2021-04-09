@@ -3,7 +3,7 @@
   <head>
     <title>Guarapita</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="https://kit.fontawesome.com/87a8e7b189.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,11 +12,13 @@
   </head>
 
   <body>
-  <%= render "layouts/navbar" %>
-    <div class="container mt-5">
-      <p class="notice mt-5"><%= notice %></p>
-      <p class="alert mt-5"><%= alert %></p>
+      <%= render "shared/navbar" %>
+      <div class="container">
+      <%= render 'shared/message', message: notice, type: 'success' if notice %>
+      <%= render 'shared/message', message: alert, type: 'danger' if alert %>
+      </div>
+      
       <%= yield %>
-    </div>
+
   </body>
 </html>

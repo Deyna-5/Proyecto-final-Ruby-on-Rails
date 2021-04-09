@@ -1,29 +1,32 @@
-<div class="jumbotron bg-light">
-  <h2 class="text-center">Ingresar</h2>
-  <p class="text-muted text-center mb-5"> Si ya tienes una cuenta ingresa aqui para poder contratar nuestro servicio </p>
+<br>
+<div class="container mt-5">
+  <div class="jumbotron bg-light">
+    <h2 class="text-center">Ingresar</h2>
+    <p class="text-muted text-center mb-5"> Si ya tienes una cuenta ingresa aqui para poder contratar nuestro servicio </p>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field my-3">
-      <%= f.label :email, "Correo electronico" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field my-3">
-      <%= f.label :password, "Contraseña" %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-
-    <% if devise_mapping.rememberable? %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field my-3">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me, "Guardar contraseña" %>
+        <%= f.label :email, "Correo electronico" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field my-3">
+        <%= f.label :password, "Contraseña" %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field my-3">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, "Guardar contraseña" %>
+        </div>
+      <% end %>
+
+      <div class="actions mb-4">
+        <%= f.submit "Ingresar", class: "btn btn-light" %>
       </div>
     <% end %>
 
-    <div class="actions mb-4">
-      <%= f.submit "Ingresar", class: "btn btn-light" %>
-    </div>
-  <% end %>
-
-  <%= render "users/shared/links" %>
+    <%= render "users/shared/links" %>
+  </div>
 </div>

@@ -4,6 +4,7 @@
        position: fixed;
        width: 100%;
        top: 0px;
+       z-index: 100;
 }
 /* Links de registro y acceso */
 #login-logout{
@@ -26,12 +27,43 @@
 .nav-link:hover{
        color: black;
 }
-
 /*AREA DEL LOG UP*/
 .smallp{
        font-size: 15px;
 }
-
+/*------------------------------ Header-----------------------------*/
+#logo{
+       width: 500px;
+       position: relative;
+       left: 27%;
+       z-index: -1;
+}
+#instagram{
+       border: 1px solid #7B2785;
+       background-color: #7B2785;
+       position: fixed;
+       width: 100px;
+       height: 50px;
+       top: 300px;
+       border-radius: 15px;
+       left: -40px;
+}
+.fa-instagram{
+       color: white;
+       margin-left: 55px;
+       margin-top: 8px;
+}
+.carousselimg{
+       width: 800px;
+       height: 400px
+}
+#carousselbg{
+       background-color:rgba(125, 123, 123, 0.10);
+}
+#alert-alert{
+       z-index: 200;
+       top: 60px;
+}
 /* --------------------------MEDIA QUERY ------------------------------------ */
 @media(min-width: 320px) and (max-width: 500px){
        #login-logout{
