@@ -13,4 +13,13 @@ class CartsController < ApplicationController
               @order = current_order
        end
 
+       def destroy
+              @item = OrderItem.find(params[:item_id])
+
+              @item.order.update(total: @item.order.total - @item.price)
+              @item.destroy
+
+              redirect_to cart_path, notice: "Haz eliminado el producto del carro"
+       end
+
 end
