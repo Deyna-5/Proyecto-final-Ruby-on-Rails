@@ -52,8 +52,10 @@
               </tbody>
        </table>
 <% else %>
+       <br>
+       <br>
        <h1>No tienes autorizacion para estar aca</h1>
        <p class="text-muted">Regresa a la página principal con este link</p>
-       <%= Link_to root_path "Volver", class: "btn btn-light" %>
+       <%= link_to "Volver",root_path,  class: "btn btn-light" %>
 <%end%>
 </div>

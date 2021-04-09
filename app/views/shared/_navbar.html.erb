@@ -16,10 +16,17 @@
                      <li class="nav-item mx-2">
                             <a class="nav-link" href="#">Sobre mi</a>
                      </li>
+                     <% if user_signed_in? %>
+                     <li class="nav-item mx-2">
+                            <a href="/user/show" id="userperfillink">Ver mi perfil</a>
+                     </li>
+                     <% end %>
+                     
               </ul>
               <div id="login-logout">
                      <%if user_signed_in? %>
-                                   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "sessions" %>
+                                   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "sessions" %> |
+                                   <%= link_to "<h5 class='fas fa-shopping-cart'></h5>".html_safe, cart_path, class: "sessions" %>
                             <%else%>
                                    <%= link_to "Log in", new_user_session_path, class: "sessions" %> |
                                    <%= link_to "Sign up", new_user_registration_path, class: "sessions" %>

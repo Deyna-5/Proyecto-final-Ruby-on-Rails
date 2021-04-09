@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-       before_action :set_user
+       before_action :set_user, only: [:destroy, :become_admin]
        before_action :authenticate_user!
 
        def destroy
@@ -12,6 +12,10 @@ class UsersController < ApplicationController
        def become_admin
               @user.toggle!(:admin)
               redirect_to dashboard_path
+       end
+
+       def show
+              
        end
 
        private

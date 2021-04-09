@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
+  get "user/show", to: "users#show", as: "user"
 
   resource :cart, only: [:show, :update]
   delete 'cart/:item_id/remove', to: 'carts#destroy', as: 'destroy_cart_item'

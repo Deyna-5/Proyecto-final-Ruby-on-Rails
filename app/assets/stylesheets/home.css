@@ -9,7 +9,7 @@
 /* Links de registro y acceso */
 #login-logout{
        position: relative;
-       right: -880px;
+       right: -850px;
 }
 /* Posicion de los links del navbar */
 .navbar-nav{
@@ -26,6 +26,10 @@
 /*AREA DEL LOG UP*/
 .smallp{
        font-size: 15px;
+}
+#userperfillink{
+       position: relative;
+       top: 8px;
 }
 /*------------------------------ Header-----------------------------*/
 #logo{
@@ -116,7 +120,7 @@
        display: inline-block;
 }
 
-#buttoncart{
+.buttoncart{
        position:absolute;
        right: -100px;
 }
