@@ -7,6 +7,15 @@
        <i class="fab fa-instagram fa-2x"></i>
 </div>
 
+<% if user_signed_in? %>
+       <% if current_user.admin == true %>
+              <div>
+              <p>¡Hola! Bienvenido administrador <%= current_user.name %></p>
+              <%= link_to "Panel de control", dashboard_path %>
+              </div>
+       <%end%>
+<%end%>
+
 <!--CAROUSEL -->
 <div id="carousselbg">
        <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
@@ -36,11 +45,36 @@
               </a>
        </div>
 </div>
-<% if user_signed_in? %>
-       <% if current_user.admin == true %>
-              <div>
-              <p>¡Hola! Bienvenido administrador <%= current_user.name %></p>
-              <%= link_to "Panel de control", dashboard_path %>
+
+<!-- INFORMACION GENERAL DEL LOCAL -->
+<div class="my-5">
+       <div id="local" class="my-5">
+              <h3 class="text-center mb-4">Sobre el local</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sit quaerat architecto adipisci, <br> velit obcaecati laborum aliquam facere cumque harum magnam aut inventore amet exercitationem tenetur vero <br>
+              impedit asperiores? Fugit!</p>
+       </div>
+       <div id="sobremi" class="my-5">
+              <h3 class="text-center mb-4">Sobre mi</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ipsam sed corporis vel laboriosam possimus natus dolores doloremque unde quod fugiat, animi fugit consequatur sapiente rerum. Ducimus facilis corrupti obcaecati!</p>
+       </div>
+</div>
+
+<!-- Catalogo -->
+<div class="divisores">
+       <h1 class="text-center text-white">Listado de productos</h1>
+</div>
+
+<% @products.each do |product| %>
+
+       <div class="product my-5">
+              <div class="container">
+                     <%= image_tag product.product, class: "productimage" %>
+                     <div class="infoproduct">  
+                            <h3 class="text-center mb-4"><%= product.name %></h3>
+                            <p class="p-description"><%= product.description %></p>
+                            <p> <strong>Precio:</strong><%= product.price %></p>
+                     </div>
               </div>
-       <%end%>
+       </div>
+
 <%end%>
