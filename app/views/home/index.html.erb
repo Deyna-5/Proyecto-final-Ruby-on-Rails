@@ -73,6 +73,11 @@
                             <h3 class="text-center mb-4"><%= product.name %></h3>
                             <p class="p-description"><%= product.description %></p>
                             <p> <strong>Precio:</strong><%= product.price %></p>
+                            <%= form_for :cart, url: cart_path, method: :put do |f| %>
+                                   <%= f.hidden_field :product_id, value: product.id %>
+                                   <%= f.hidden_field :quantity, value: 1 %>
+                                   <%= f.submit "Añadir al carrito", id: "buttoncart" %>
+                            <%end%>
                      </div>
               </div>
        </div>

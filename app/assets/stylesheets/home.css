@@ -116,6 +116,10 @@
        display: inline-block;
 }
 
+#buttoncart{
+       position:absolute;
+       right: -100px;
+}
 /* --------------------------MEDIA QUERY ------------------------------------ */
 @media(min-width: 320px) and (max-width: 500px){
        #login-logout{
