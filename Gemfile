@@ -9,8 +9,8 @@ gem "faker"
 gem "chartkick"
 gem "groupdate"
 gem 'mini_magick', '~> 4.8'
-# gem "activemerchant"
-# gem 'dotenv-rails'
+gem "activemerchant"
+gem "aws-sdk-s3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'

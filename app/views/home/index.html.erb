@@ -69,7 +69,7 @@
 
        <div class="product my-5">
               <div class="container">
-                     <%#= image_tag product.product, class: "productimage" %>
+                     <%= image_tag product.product, class: "productimage"  if product.product.attached?  %>
                      <div class="infoproduct">  
                             <h3 class="text-center mb-4"><%= product.name %></h3>
                             <p class="p-description"><%= product.description %></p>
@@ -80,6 +80,12 @@
                                           <%= f.hidden_field :quantity, value: 1 %>
                                           <%= f.submit "Añadir al carrito", class: "buttoncart" %>
                                    <%end%>
+                                   <%= link_to "Dar like", product_path(product.id), method: :post %>
+                                   <% if  product.likes.count >= 1 %>
+                                                 <p class="d-inline"><i class="fas fa-heart"><%= product.likes.count %> <%= ( product.likes.count) == 1 ? "like" : "likes" %></i></p>
+                                          <%else%>
+                                                 <p class="d-inline"><i class="far fa-heart"><%= product.likes.count %> <%= ( product.likes.count) == 1 ? "like" : "likes" %></i></p>
+                                          <%end%>
                             <% else %>
                                    <p class="buttoncart">Si deseas comprar primero debes loguearte</p>
                             <%end%>

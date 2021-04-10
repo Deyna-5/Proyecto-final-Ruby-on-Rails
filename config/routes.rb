@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resource :cart, only: [:show, :update]
   delete 'cart/:item_id/remove', to: 'carts#destroy', as: 'destroy_cart_item'
 
-  resources :products, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :products, only: [:show, :new, :create, :edit, :update, :destroy] do
+    resources :likes
+  end
 
   get 'update/:id', to: 'users#become_admin', as: 'become_admin'
   delete "user/:id", to: "users#destroy", as: "delete_user"
