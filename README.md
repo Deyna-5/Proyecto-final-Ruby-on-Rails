@@ -16,6 +16,3 @@ https://trello.com/invite/b/fegndzMo/c024210f0bb277179f0f37f25e9ade99/proyecto-f
 ------
 ## Hito 2: Desarrollo
 ------
-El usuario para el acceso como administrador es el siguiente:
-<strong>email: </strong> admin@gmail.com
-<strong>password: </strong> password
