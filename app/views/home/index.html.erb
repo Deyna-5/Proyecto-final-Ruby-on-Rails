@@ -78,14 +78,16 @@
                                    <%= form_for :cart, url: cart_path, method: :put do |f| %>
                                           <%= f.hidden_field :product_id, value: product.id %>
                                           <%= f.hidden_field :quantity, value: 1 %>
-                                          <%= f.submit "Añadir al carrito", class: "buttoncart" %>
+                                          
+                                          <%= f.submit "Añadir al carrito", class: "buttoncart btn btn-light" %>
                                    <%end%>
-                                   <%= link_to "Dar like", product_path(product.id), method: :post %>
-                                   <% if  product.likes.count >= 1 %>
-                                                 <p class="d-inline"><i class="fas fa-heart"><%= product.likes.count %> <%= ( product.likes.count) == 1 ? "like" : "likes" %></i></p>
-                                          <%else%>
-                                                 <p class="d-inline"><i class="far fa-heart"><%= product.likes.count %> <%= ( product.likes.count) == 1 ? "like" : "likes" %></i></p>
-                                          <%end%>
+                                   <p> <strong>cantidad de likes:</strong><%= product.likes.count %></p>
+                                   <% pre_like = product.likes.find { |like| like.user_id == current_user.id} %>
+                                   <% if pre_like %>
+                                   <%= link_to 'Unlike', product_like_path(product.id, pre_like.id), method: :delete, class: "buttoncart btn btn-light" %>
+                                   <% else %>
+                                   <%= link_to 'Like', product_likes_path(product.id), method: :post, class: "buttoncart btn btn-light"%>
+                                   <% end %>
                             <% else %>
                                    <p class="buttoncart">Si deseas comprar primero debes loguearte</p>
                             <%end%>

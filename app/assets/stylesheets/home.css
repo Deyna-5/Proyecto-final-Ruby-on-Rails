@@ -47,6 +47,7 @@
        top: 300px;
        border-radius: 15px;
        left: -40px;
+       z-index: 1;
 }
 .fa-instagram{
        color: white;
@@ -118,6 +119,8 @@
        height: 200px;
        border-radius: 50px;
        display: inline-block;
+       position: relative;
+       top: -25px;
 }
 
 .buttoncart{
