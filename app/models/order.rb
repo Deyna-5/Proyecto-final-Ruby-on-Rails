@@ -2,9 +2,9 @@ class Order < ApplicationRecord
   before_create :generate_number
 
   belongs_to :user
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
   has_many :products, through: :order_items
-  has_many :payments
+  has_many :payments, dependent: :destroy
 
   def generate_number(size = 9)
     self.number ||= loop do
