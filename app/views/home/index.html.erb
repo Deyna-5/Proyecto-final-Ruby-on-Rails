@@ -48,15 +48,17 @@
 </div>
 
 <!-- INFORMACION GENERAL DEL LOCAL -->
-<div class="my-5">
-       <div id="local" class="my-lg-5">
-              <h3 class="text-center mb-4">Sobre el local</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sit quaerat architecto adipisci, <br> velit obcaecati laborum aliquam facere cumque harum magnam aut inventore amet exercitationem tenetur vero <br>
-              impedit asperiores? Fugit!</p>
-       </div>
-       <div id="sobremi" class="my-lg-5">
-              <h3 class="text-center mb-4">Sobre mi</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ipsam sed corporis vel laboriosam possimus natus dolores doloremque unde quod fugiat, animi fugit consequatur sapiente rerum. Ducimus facilis corrupti obcaecati!</p>
+<div class="my-5 container">
+       <div class="row">
+              <div id="local" class="my-lg-5 col-lg-7 col-md-5 col-sm-12 col-12">
+                     <h3 class="text-center mb-4">Sobre el local</h3>
+                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sit quaerat architecto adipisci, <br> velit obcaecati laborum aliquam facere cumque harum magnam aut inventore amet exercitationem tenetur vero <br>
+                     impedit asperiores? Fugit!</p>
+              </div>
+              <div id="sobremi" class="my-lg-5 col-lg-4 col-md-5 col-sm-12 col-12">
+                     <h3 class="text-center mb-4">Sobre mi</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ipsam sed corporis vel laboriosam possimus natus dolores doloremque unde quod fugiat, animi fugit consequatur sapiente rerum. Ducimus facilis corrupti obcaecati!</p>
+              </div>
        </div>
 </div>
 
@@ -67,26 +69,25 @@
 
 <% @products.each do |product| %>
 
-       <div class="product my-5">
-              <div class="container">
-                     <%= image_tag product.product, class: "productimage"  if product.product.attached?  %>
-                     <div class="infoproduct">  
-                            <h3 class="text-center mb-4"><%= product.name %></h3>
+       <div class="container product my-5">
+              <div class="row">
+                     <%= image_tag product.product, class: "productimage my-lg-5 d-inline"  if product.product.attached?  %>
+                     <div class="infoproduct col-lg-7 d-inline mx-lg-5 col-md-12 py-md-4">  
+                            <h3 class="text-center mb-4 product-title my-lg-4"><%= product.name %></h3>
                             <p class="p-description"><%= product.description %></p>
                             <p> <strong>Precio:</strong><%= product.price %></p>
+                            <p> <strong>cantidad de likes:</strong><%= product.likes.count %></p>
                             <% if user_signed_in? %>
                                    <%= form_for :cart, url: cart_path, method: :put do |f| %>
                                           <%= f.hidden_field :product_id, value: product.id %>
                                           <%= f.hidden_field :quantity, value: 1 %>
-                                          
-                                          <%= f.submit "Añadir al carrito", class: "buttoncart btn btn-light" %>
+                                          <%= f.submit "Añadir al carrito", class: "buttoncart inline btn btn-light" %>
                                    <%end%>
-                                   <p> <strong>cantidad de likes:</strong><%= product.likes.count %></p>
                                    <% pre_like = product.likes.find { |like| like.user_id == current_user.id} %>
                                    <% if pre_like %>
-                                   <%= link_to 'Unlike', product_like_path(product.id, pre_like.id), method: :delete, class: "buttoncart btn btn-light" %>
+                                   <%= link_to 'Unlike', product_like_path(product.id, pre_like.id), method: :delete, class: "buttonlike inline btn btn-light" %>
                                    <% else %>
-                                   <%= link_to 'Like', product_likes_path(product.id), method: :post, class: "buttoncart btn btn-light"%>
+                                   <%= link_to 'Like', product_likes_path(product.id), method: :post, class: "buttonlike inline btn btn-light"%>
                                    <% end %>
                             <% else %>
                                    <p class="buttoncart">Si deseas comprar primero debes loguearte</p>

@@ -68,10 +68,7 @@
 /* --------------------------SOBRE MI ----------------------------------------*/
 
 #local{
-       width: 600px;
        border: solid 1px #7B2785;
-       margin-left:200px;
-       margin-top:50px;
        text-align: justify;
        border-radius: 30px;
        padding: 30px;
@@ -79,10 +76,8 @@
        height: 250px;
 }
 #sobremi{
-       width: 400px;
        border: solid 1px #7B2785;
-       margin-left: 110px;
-       margin-top:50px;
+       margin-left: 80px;
        text-align: justify;
        border-radius: 30px;
        padding: 30px;
@@ -95,25 +90,11 @@
        background-color: #7B2785;
        padding: 25px;
 }
-
 .product{
        border-top: 1px solid darkgray;
        border-bottom: 1px solid darkgray;
-       padding: 40px 0px;
+       padding-top: 40px ;
 }
-
-.infoproduct{
-       display: inline-block;
-       width: 500px;
-       position: relative;
-       right: -200px;
-       top: 30px;
-}
-
-.p-description{
-       text-align: justify;
-}
-
 .productimage{
        width: 300px;
        height: 200px;
@@ -122,8 +103,11 @@
        position: relative;
        top: -25px;
 }
-
 .buttoncart{
+       position:absolute;
+       right: -40px;
+} 
+.buttonlike{
        position:absolute;
        right: -100px;
 }
@@ -137,15 +121,24 @@
        #logo{
               width: 400px;
        }
-       #local{
-              width: 380px;
-              position: relative;
-              left: -150px;
-       }
        #sobremi{
-              width: 380px;
               position: relative;
-              left: -60px;
+              left: -80px;
+              margin-top: 40px;
+       }
+       .productimage{
+              width: 100%;
+              margin-top: 20px;
+       }
+       .buttoncart{
+              position:absolute;
+              right: 100px;
+              bottom: 20px
+       } 
+       .buttonlike{
+              position:absolute;
+              right: 30px;
+              bottom: 20px
        }
 }
 
@@ -155,17 +148,30 @@
               margin-left: 56px;
               margin-top: 50px;
        }
+       .productimage{
+              width: 100%;
+              margin-top: 20px;
+       }
+       .buttoncart{
+              position:absolute;
+              right: 80px;
+              bottom: 20px
+       } 
+       .buttonlike{
+              position:absolute;
+              right: 10px;
+              bottom: 20px
+       }
+}
+
+@media(min-width: 601px) and (max-width: 768px){
        #local{
-              width: 380px;
-              position: relative;
-              right: 22%;
-              display: block;
+              margin-left: 10px;
        }
        #sobremi{
-              width: 380px;
               position: relative;
-              right: 5%;
-              display: block
+              margin-left: 12px;
+              margin-top: 30px;
        }
 }
 
@@ -174,22 +180,27 @@
        #login-logout{
               right: -300px;
        }
+       .buttoncart{
+              position:absolute;
+              right: 30px;
+       } 
+       .buttonlike{
+              position:absolute;
+              right: -30px;
+       }
 }
 
-@media(min-width: 1051px) and (max-width: 1180px){
+@media(min-width: 1050px) and (max-width: 1180px){
        #login-logout{
               right: -350px;
        }
-       #local{
-              width: 400px;
-              position: relative;
-              left: -70px;
-       }
-       #sobremi{
-              width: 280px;
-              position: relative;
-              left: -80px;
-              top: 35px;
+       .buttoncart{
+              position:absolute;
+              right: 10px;
+       } 
+       .buttonlike{
+              position:absolute;
+              right: -50px;
        }
 }
 
@@ -197,32 +208,10 @@
        #login-logout{
               right: -500px;
        }
-       #local{
-              width: 400px;
-              position: relative;
-              left: 0px;
-       }
-       #sobremi{
-              width: 280px;
-              position: relative;
-              left: 0px;
-              top: 35px;
-       }
 }
 
 @media(min-width: 1310px) and (max-width: 1470px){
        #login-logout{
               right: -600px;
-       }
-       #local{
-              width: 500px;
-              position: relative;
-              left: 0px;
-       }
-       #sobremi{
-              width: 380px;
-              position: relative;
-              left: 0px;
-              top: 17px;
        }
 }
