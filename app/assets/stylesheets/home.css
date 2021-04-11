@@ -35,7 +35,7 @@
 #logo{
        width: 500px;
        position: relative;
-       left: 27%;
+       /* left: 27%; */
        z-index: -1;
 }
 #instagram{
@@ -128,28 +128,101 @@
        right: -100px;
 }
 /* --------------------------MEDIA QUERY ------------------------------------ */
-@media(min-width: 320px) and (max-width: 500px){
+@media(min-width: 320px) and (max-width: 600px){
        #login-logout{
               left: 0px;
               margin-left: 60px;
+              margin-top: 50px;
+       }
+       #logo{
+              width: 400px;
+       }
+       #local{
+              width: 380px;
+              position: relative;
+              left: -150px;
+       }
+       #sobremi{
+              width: 380px;
+              position: relative;
+              left: -60px;
        }
 }
 
-@media(min-width: 501px) and (max-width: 991px){
+@media(min-width: 601px) and (max-width: 991px){
        #login-logout{
               left: 0px;
               margin-left: 56px;
+              margin-top: 50px;
+       }
+       #local{
+              width: 380px;
+              position: relative;
+              right: 22%;
+              display: block;
+       }
+       #sobremi{
+              width: 380px;
+              position: relative;
+              right: 5%;
+              display: block
        }
 }
 
-@media(min-width: 992px) and (max-width: 1101px){
+
+@media(min-width: 992px) and (max-width: 1050px){
+       #login-logout{
+              right: -300px;
+       }
+}
+
+@media(min-width: 1051px) and (max-width: 1180px){
+       #login-logout{
+              right: -350px;
+       }
+       #local{
+              width: 400px;
+              position: relative;
+              left: -70px;
+       }
+       #sobremi{
+              width: 280px;
+              position: relative;
+              left: -80px;
+              top: 35px;
+       }
+}
+
+@media(min-width: 1181px) and (max-width: 1310px){
        #login-logout{
               right: -500px;
        }
+       #local{
+              width: 400px;
+              position: relative;
+              left: 0px;
+       }
+       #sobremi{
+              width: 280px;
+              position: relative;
+              left: 0px;
+              top: 35px;
+       }
 }
 
-@media(min-width: 1102px) and (max-width: 1400px){
+@media(min-width: 1310px) and (max-width: 1470px){
        #login-logout{
               right: -600px;
+       }
+       #local{
+              width: 500px;
+              position: relative;
+              left: 0px;
+       }
+       #sobremi{
+              width: 380px;
+              position: relative;
+              left: 0px;
+              top: 17px;
        }
 }
