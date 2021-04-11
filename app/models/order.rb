@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   before_create :generate_number
 
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :order_items
   has_many :products, through: :order_items
   has_many :payments
