@@ -32,10 +32,11 @@ class CartsController < ApplicationController
               allow_guest_checkout: true,
               currency: "USD"
               )
-              payment_method = PaymentMethod.find_by(code: "PEC")
+              # payment_method = PaymentMethod.find_by(code: "PEC")
               Payment.create(
                      order_id: order.id,
-                     payment_method_id: payment_method.id,
+                     payment_method_id: PaymentMethod.find_by(code: "PEC").id,
+                     # payment_method_id: payment_method.id,
                      state: "processing",
                      total: order.total,
                      token: response.token
