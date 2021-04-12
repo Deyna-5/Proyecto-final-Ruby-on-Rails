@@ -4,7 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 #Gemas añadidas
-gem "devise"
+# gem "devise"
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem "faker"
 gem "chartkick"
 gem "groupdate"
@@ -12,6 +13,8 @@ gem 'mini_magick', '~> 4.8'
 gem "activemerchant"
 gem "aws-sdk-s3"
 gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
