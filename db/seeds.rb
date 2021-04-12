@@ -113,6 +113,8 @@ l = Product.create(
 )
 l.product.attach(io: File.open('app/assets/images/pie_limon.jpg'), filename: "pie_limon.jpg", content_type: "image/jpg")
 
+PaymentMethod.destroy_all
+PaymentMethod.create(name: "Paypal Express Checkout", code: "PEC")
 
 # a = Product.create(
 #        name: "Producto de prueba seed with active storage",

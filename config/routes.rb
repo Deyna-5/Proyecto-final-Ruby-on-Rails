@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   }
   get "user/show", to: "users#show", as: "user"
 
-  resource :cart, only: [:show, :update]
+  resource :cart, only: [:show, :update] do
+    member do
+      post :pay_with_paypal
+      get :process_paypal_payment
+    end
+  end
   delete 'cart/:item_id/remove', to: 'carts#destroy', as: 'destroy_cart_item'
 
   resources :products, only: [:show, :new, :create, :edit, :update, :destroy] do
