@@ -14,6 +14,7 @@ gem "activemerchant"
 gem "aws-sdk-s3"
 gem 'dotenv-rails'
 gem 'omniauth'
+gem "omniauth-rails_csrf_protection"
 gem 'omniauth-google-oauth2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
