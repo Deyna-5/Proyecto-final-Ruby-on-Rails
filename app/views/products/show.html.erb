@@ -1,19 +1,54 @@
-<p id="notice"><%= notice %></p>
+<br>
+<br>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <div class="jumbotron bg-light product">
+    <div class="row">
+      <%= image_tag @product.product, class: "productimage my-lg-5 d-inline col-lg-4"  if @product.product.attached? %>
+      <div class="col-lg-4 d-inline mx-lg-5 col-md-12 py-md-4 inline">
+        <h5>Nombre</h5>
+        <p><%= @product.name %></p>
+        <h5>Descripcion</h5>
+        <p><%= @product.description %></p>
+        <h5>Precio</h5>
+        <p><%= @product.price %></p>
+        <h6 class="d-inline">Cantidad de likes:</h6>
+        <p class="d-inline"><%= @product.likes.count %></p> <br>
+        <h6 class="d-inline">Contidad de comentarios:</h6>
+        <p class="d-inline"><%= @product.comments.count %></p>
+      </div>
+    </div>
+  </div>
+  <h4 class="text-center">Deja tu comentario sobre este producto</h4>
+  
+  <%= form_with(model: @comment, remote: true, method: :post) do |f| %>
+    <div id="comentarios" class="field text-center">
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.text_field :text, size: '55x50'  %> <br>
+      <%= f.submit "Comentar", class: "btn btn-light" %>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <h4 class="text-center my-5">Comentarios sobre este producto</h4>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <div id="comentarios">
+    
+    <% @product.comments.each do |comment| %>
+      <div class="commentuser my-5 bg-light">
+        <%= image_tag comment.user.avatar if comment.user.avatar.attached? %>
+        <strong><%= comment.user.name %></strong> <br>
+        <%= comment.text %>
+      </div>
+    <% end %>
+    
+
+  </div>
+  
+
+
+  <%= link_to 'Volver a la página principal', root_path, class: "btn btn-light" %>
+
+</div>

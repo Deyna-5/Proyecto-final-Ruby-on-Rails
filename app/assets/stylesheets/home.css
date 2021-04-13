@@ -86,7 +86,7 @@
 }
 
 /*--------------------------Productos -----------------------------------------*/
-#listadoprod{
+.listadoprod{
        background-color: #7B2785;
        padding: 25px;
 }
@@ -111,6 +111,15 @@
        position:absolute;
        right: -100px;
 }
+/*----------------------------COMENTARIOS----------------------------------*/
+
+.commentuser{
+       border: 1px solid lightgray ;
+       border-radius: 20px;
+       padding: 20px;
+}
+
+
 /* --------------------------MEDIA QUERY ------------------------------------ */
 @media(min-width: 320px) and (max-width: 600px){
        #login-logout{

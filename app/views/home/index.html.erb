@@ -63,7 +63,7 @@
 </div>
 
 <!-- Catalogo -->
-<div id="listadoprod">
+<div class="listadoprod">
        <h1 class="text-center text-white">Listado de productos</h1>
 </div>
 
@@ -72,7 +72,7 @@
        <div class="container product my-5">
               <div class="row">
                      <%= image_tag product.product, class: "productimage my-lg-5 d-inline"  if product.product.attached?  %>
-                     <div class="infoproduct col-lg-7 d-inline mx-lg-5 col-md-12 py-md-4">  
+                     <div class="col-lg-7 d-inline mx-lg-5 col-md-12 py-md-4">  
                             <h3 class="text-center mb-4 product-title my-lg-4"><%= product.name %></h3>
                             <p class="p-description"><%= product.description %></p>
                             <p> <strong>Precio:</strong><%= product.price %></p>
@@ -97,3 +97,8 @@
        </div>
 
 <%end%>
+
+<div class="listadoprod">
+       <h1 class="text-center text-white">Contactame</h1>
+</div>
+

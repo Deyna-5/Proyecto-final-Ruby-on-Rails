@@ -1,0 +1,15 @@
+var main = document.getElementById('comentarios')
+
+var div = document.createElement('div')
+div.setAttribute('class', 'commentuser my-5 bg-ligh')
+
+var name = document.createElement('strong')
+var text = document.createElement('p')
+
+name.innerHTML = "<%= @comment.user.name %>"
+text.innerHTML = "<%= @comment.text %>"
+
+div.appendChild(name)
+div.appendChild(text)
+
+main.appendChild(div)
