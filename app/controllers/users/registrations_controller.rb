@@ -10,9 +10,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    info_mail(
+      mail: resource.email,
+      subject: "Bienvenido a guarapita dulce",
+      message: "Haz creado una cuenta en guarapita dulce con éxito"
+    )
+  end
 
   # GET /resource/edit
   # def edit

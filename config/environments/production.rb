@@ -99,6 +99,10 @@ Rails.application.configure do
     ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
   end
 
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV["MAILGUN_API_KEY"],
+    domain: 'https://desolate-meadow-74230.herokuapp.com/'
+  }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end

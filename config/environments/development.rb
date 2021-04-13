@@ -68,5 +68,11 @@ Rails.application.configure do
     }
     ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
   end
-    
+
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV["MAILGUN_API_KEY"],
+    domain: 'sandbox9c1ee9ce41ee43b6b62b8f8534e188cf.mailgun.org'
+  }
+
 end

@@ -16,6 +16,7 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-google-oauth2'
+gem 'mailgun-ruby', '~>1.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
