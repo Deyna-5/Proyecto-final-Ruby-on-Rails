@@ -12,12 +12,10 @@
   </head>
 
   <body>
-      <%= render "shared/navbar" %>
-      <div class="container">
+    <div class="container">
       <%= render 'shared/message', message: notice, type: 'success' if notice %>
       <%= render 'shared/message', message: alert, type: 'danger' if alert %>
-      </div>
-      
+    </div>
       <%= yield %>
 
   </body>
