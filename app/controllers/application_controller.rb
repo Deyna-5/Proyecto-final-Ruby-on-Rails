@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
               mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
               ms_params = {
                      from: "noreply@guarapitadulce.cl",
-                     to: resource.email,
+                     to: "deyna.alexac@gmail.com",
                      text: message
               }
               mg_client.send_message('sandbox9c1ee9ce41ee43b6b62b8f8534e188cf.mailgun.org', ms_params)

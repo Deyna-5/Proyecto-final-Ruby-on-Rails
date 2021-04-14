@@ -119,6 +119,12 @@
        padding: 20px;
 }
 
+/*-----------------------------INFO USUARIO----------------------------------*/
+
+.infousuario{
+       position: relative;
+       top: 50px;
+}
 
 /* --------------------------MEDIA QUERY ------------------------------------ */
 @media(min-width: 320px) and (max-width: 600px){
@@ -149,9 +155,13 @@
               right: 30px;
               bottom: 20px
        }
+       .userphoto{
+              position: relative;
+              left: 22%;
+       }
 }
 
-@media(min-width: 601px) and (max-width: 991px){
+@media(min-width: 601px) and (max-width: 990px){
        #login-logout{
               left: 0px;
               margin-left: 56px;
@@ -171,6 +181,10 @@
               right: 10px;
               bottom: 20px
        }
+       .userphoto{
+              position: relative;
+              left: 25%;
+       }
 }
 
 @media(min-width: 601px) and (max-width: 768px){
@@ -185,7 +199,7 @@
 }
 
 
-@media(min-width: 992px) and (max-width: 1050px){
+@media(min-width: 991px) and (max-width: 1050px){
        #login-logout{
               right: -300px;
        }

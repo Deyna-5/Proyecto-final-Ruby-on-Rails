@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resource :comments, only: [:new, :create, :destroy]
+  # resource :comments, only: [:new, :create, :destroy]
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
