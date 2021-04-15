@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @comments = Comment.new
   end
 
   def new

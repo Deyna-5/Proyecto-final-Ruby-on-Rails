@@ -24,7 +24,7 @@
   </div>
   <h4 class="text-center">Deja tu comentario sobre este producto</h4>
   
-  <%= form_with(model: @comment, remote: true, method: :post) do |f| %>
+  <%= form_with(url: comments_path, remote: true, method: :post) do |f| %>
     <div id="comentarios" class="field text-center">
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :product_id, value: @product.id %>

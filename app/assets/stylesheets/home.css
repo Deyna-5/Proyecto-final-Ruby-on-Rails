@@ -55,11 +55,8 @@
        margin-top: 8px;
 }
 .carousselimg{
-       width: 800px;
-       height: 400px
-}
-#carousselbg{
-       background-color:rgba(125, 123, 123, 0.10);
+       width: 100%;
+       height: 600px
 }
 #alert-alert{
        z-index: 200;
@@ -68,18 +65,18 @@
 /* --------------------------SOBRE MI ----------------------------------------*/
 
 #local{
-       border: solid 1px #7B2785;
+       border-top: solid 1px #7B2785;
+       border-bottom: solid 1px #7B2785;
        text-align: justify;
-       border-radius: 30px;
        padding: 30px;
        display: inline-block;
        height: 250px;
 }
 #sobremi{
-       border: solid 1px #7B2785;
+       border-top: solid 1px #7B2785;
+       border-bottom: solid 1px #7B2785;
        margin-left: 80px;
        text-align: justify;
-       border-radius: 30px;
        padding: 30px;
        display: inline-block;
        height: 250px;

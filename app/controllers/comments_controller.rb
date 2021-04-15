@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
               @comment = Comment.new
        end
 
-       def createvi
+       def create
               @comment = Comment.new(comment_params)
               respond_to do |format|
                      if @comment.save
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
        private
               def comment_params
-                     params.require(:comment).permit(:user_id, :product_id, :text)
+                     params.permit(:user_id, :product_id, :text)
               end
 
               def find_comment
