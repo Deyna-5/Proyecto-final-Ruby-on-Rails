@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
   resource :comments, only: [:new, :create, :destroy]
-  resource :contacts, only: [:new, :create, :destroy]
+  resource :contacts, only: [:new, :create]
+  delete "contacts/:id", to: "contacts#destroy", as: "contact"
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',

@@ -13,6 +13,24 @@
               <%= column_chart @new_users, label: "Usuarios", xtitle: "Dias", ytitle: "Usuarios", colors: ["#98FB98", messages: {empty: "No hay datos"}] %>
        </div>
 
+       <h2 class="text-center my-5">Listado de peticiones</h2>
+       <table class="table">
+              <thead>
+                     <th>Contacto</th>
+                     <th>Petición</th>
+                     <th>Eliminar</th>
+              </thead>
+              <tbody>
+                     <% @contacts.each do |contact| %>
+                     <tr>
+                            <td><%= contact.email %></td>
+                            <td><%= contact.text %></td>
+                            <td><%= link_to '<h4 class="fas fa-trash-alt"></i></h4>'.html_safe, contact_path(contact), method: :delete, data: {confirm: "¿Desea eliminar esta peticion?"} %></td>
+                     </tr>
+                     <%end%>
+              </tbody>
+       </table>
+
        <h2 class="text-center my-5">Listado de productos</h2>
        <table class="table">
               <thead>
@@ -27,8 +45,8 @@
                             <td> <%= product.name %> </td>
                             <td> <%= product.description %> </td>
                             <td> <%= product.price %> </td>
+                            <td> <%= link_to '<h4 class="fas fa-trash-alt"></i></h4>'.html_safe, product, method: :delete, data: {confirm: "¿Seguro desea eliminar este producto?"} %> </td>
                             <td> <%= link_to "Editar producto", edit_product_path(product)%> </td>
-                            <td> <%= link_to "Eliminar producto", product, method: :delete, data: {confirm: "¿Seguro desea eliminar este producto?"} %> </td>
                      </tr>
                      <%end%>
               </tbody>
@@ -55,7 +73,7 @@
                             <%else%>
                             <td> Usuario</td>
                             <%end%> 
-                            <td> <%= link_to "X", delete_user_path(user), method: :delete, data: {confirm: "Seguro desea eliminar este usuario?"} %> </td>
+                            <td> <%= link_to  '<h4 class="fas fa-user-times"></i></h4>'.html_safe , delete_user_path(user), method: :delete, data: {confirm: "Seguro desea eliminar este usuario?"} %> </td>
                             <td> <%= link_to "X", become_admin_path(user) %> </td>
                      </tr>
                      <%end%>

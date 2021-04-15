@@ -18,20 +18,20 @@
 
   <div class="field my-4">
     <%= form.label :name, "Nombre del producto" %> <br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
   <div class="field my-4">
     <%= form.label :description, "Descripcion del producto" %> <br>
-    <%= form.text_area :description, size: '55x5' %>
+    <%= form.text_area :description, class: "form-control", style: "height: 100px" %>
   </div>
 
   <div class="field my-4">
     <%= form.label :price, "Precio del producto" %> <br>
-    <%= form.text_field :price %>
+    <%= form.number_field :price, class: "form-control" %>
   </div>
 
   <div class="actions my4">
-    <%= form.submit "Submit", class: "btn btn-light" %>
+    <%= form.submit "Submit", class: "btn btn-success" %>
   </div>
 <% end %>

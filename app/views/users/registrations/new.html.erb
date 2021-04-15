@@ -13,36 +13,36 @@
     <%= f.file_field :avatar %>
     </div>
 
-    <div class="field my-3">
+    <div class="field my-4">
       <%= f.label :name, "Nombre"  %> <br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: "form-control" %>
     </div>
 
-    <div class="field my-3">
+    <div class="field my-4">
       <%= f.label :address, "Direccion"  %> <br>
-      <%= f.text_field :address %>
+      <%= f.text_field :address, class: "form-control"  %>
     </div>
 
-    <div class="field my-3">
+    <div class="field my-4">
       <%= f.label :email, "Dirección de correo electrónico" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
     </div>
 
-    <div class="field my-3">
+    <div class="field my-4">
       <%= f.label :password, "Contraseña" %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> letras minimo)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
     </div>
 
-    <div class="field my-3">
+    <div class="field my-4">
       <%= f.label :password_confirmation, "Confirmacion de la contraseña" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
     </div>
 
-    <div class="actions my-3">
-      <%= f.submit "Crear cuenta", class: "btn btn-light" %>
+    <div class="actions my-4">
+      <%= f.submit "Crear cuenta", class: "btn btn-success" %>
     </div>
   <% end %>
 

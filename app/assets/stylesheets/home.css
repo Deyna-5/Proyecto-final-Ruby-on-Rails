@@ -117,6 +117,9 @@
        position: relative;
        top: 50px;
 }
+#borrarcuenta{
+       border-top: 1px solid lightgray;
+}
 /*---------------------------- FOOTER -----------------------------------------*/
 #footer{
        width: 100%;
