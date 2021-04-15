@@ -19,7 +19,9 @@
       <%= render 'shared/message', message: notice, type: 'success' if notice %>
       <%= render 'shared/message', message: alert, type: 'danger' if alert %>
     </div>
-      <%= yield %>
 
+    <%= yield %>
+    
+    <%= render "shared/footer" %>
   </body>
 </html>

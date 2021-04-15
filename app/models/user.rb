@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :avatar
   has_many :likes, dependent: :destroy
+  has_many :contacts
 
   def self.from_omniauth(access_token)
     data = access_token.info
