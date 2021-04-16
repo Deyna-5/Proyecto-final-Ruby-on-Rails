@@ -10,12 +10,10 @@
 <div id="instagram">
        <a href="https://www.instagram.com/guarapitadulce/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
 </div>
-<% if user_signed_in? %>
-       <% if current_user.admin == true %>
+<% if user_signed_in? && current_user.admin == true%>
               <div id="admin">
                      <a href="/dashboard"><i class="fas fa-user-shield fa-2x"></i></a>
               </div>
-       <%end%>
 <%end%>
 
 <div class="text-center">
