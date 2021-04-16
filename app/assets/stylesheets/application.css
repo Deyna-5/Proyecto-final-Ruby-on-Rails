@@ -13,6 +13,6 @@
  *= require_tree .
  *= require_self
  *= require bootstrap/dist/css/bootstrap.css
- *= require font-awesome/scss/font-awesome
- *= require font-awesome-overwrite
+ *= require @fortawesome/fontawesome-free/css/all.css
+ *=
  */
