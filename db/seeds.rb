@@ -1,11 +1,12 @@
 User.destroy_all
-20.times do 
+10.times do 
        User.create(
               name: Faker::Name.name,
               address: Faker::Address.street_address,
               email: Faker::Internet.email,
               password: Faker::Internet.password(min_length: 10, max_length: 20),
-              admin: false
+              admin: false,
+              created_at: Faker::Date.between(from: 7.days.ago, to: Date.today)
        )
 end
 
@@ -113,12 +114,36 @@ l = Product.create(
 )
 l.product.attach(io: File.open('app/assets/images/pie_limon.jpg'), filename: "pie_limon.jpg", content_type: "image/jpg")
 
+#Creacion metodo de pago
 PaymentMethod.destroy_all
 PaymentMethod.create(name: "Paypal Express Checkout", code: "PEC")
 
-# a = Product.create(
-#        name: "Producto de prueba seed with active storage",
-#        description: "Producto de prueba active storage",
-#        price: rand(2000..7000)
-# )
-# a.product.attach(io: File.open('app/assets/images/golfeado.png'), filename: "golfeado.png", content_type: "image/png")
+#Creacion de comentarios
+Comment.destroy_all
+25.times do 
+       Comment.create(
+              user_id: rand(1..10),
+              product_id: rand(1..9),
+              text: Faker::Lorem.paragraph
+       )
+end
+
+#Creacion de Like
+Like.destroy_all
+25.times do 
+       Like.create(
+              user_id: rand(1..10),
+              product_id: rand(1..9)
+       )
+end
+
+#Creacion de ordenes
+Order.destroy_all
+25.times do
+       Order.create(
+              user_id: rand(1..10),
+              total: rand(1000..20000),
+              state: "completed",
+              created_at: Faker::Date.between(from: 7.days.ago, to: Date.today)
+       )
+end

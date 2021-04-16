@@ -25,7 +25,7 @@
                      <tr>
                             <td><%= contact.email %></td>
                             <td><%= contact.text %></td>
-                            <td><%= link_to '<h4 class="fas fa-trash-alt"></i></h4>'.html_safe, contact_path(contact), method: :delete, data: {confirm: "¿Desea eliminar esta peticion?"} %></td>
+                            <td><%= link_to '<h4 class="fas fa-trash-alt"></i></h4>'.html_safe, contact_path(contact), method: :delete, data: {confirm: "¿Desea eliminar esta peticion?"}, class: "dasboard-icon" %></td>
                      </tr>
                      <%end%>
               </tbody>
@@ -45,7 +45,7 @@
                             <td> <%= product.name %> </td>
                             <td> <%= product.description %> </td>
                             <td> <%= product.price %> </td>
-                            <td> <%= link_to '<h4 class="fas fa-trash-alt"></i></h4>'.html_safe, product, method: :delete, data: {confirm: "¿Seguro desea eliminar este producto?"} %> </td>
+                            <td> <%= link_to '<h4 class="fas fa-trash-alt"></i></h4>'.html_safe, product, method: :delete, data: {confirm: "¿Seguro desea eliminar este producto?"}, class: "dasboard-icon" %> </td>
                             <td> <%= link_to "Editar producto", edit_product_path(product)%> </td>
                      </tr>
                      <%end%>
@@ -72,9 +72,9 @@
                             <td> Administrador </td>
                             <%else%>
                             <td> Usuario</td>
-                            <%end%> 
-                            <td> <%= link_to  '<h4 class="fas fa-user-times"></i></h4>'.html_safe , delete_user_path(user), method: :delete, data: {confirm: "Seguro desea eliminar este usuario?"} %> </td>
-                            <td> <%= link_to "X", become_admin_path(user) %> </td>
+                            <%end%>
+                            <td> <%= link_to  '<h4 class="fas fa-user-times"></i></h4>'.html_safe , delete_user_path(user), method: :delete, data: {confirm: "Seguro desea eliminar este usuario?"}, class: "dasboard-icon" %> </td>
+                            <td> <%= link_to '<h4 class="fas fa-user-cog"></i></h4>'.html_safe , become_admin_path(user), class: "dasboard-icon" %> </td>
                      </tr>
                      <%end%>
               </tbody>

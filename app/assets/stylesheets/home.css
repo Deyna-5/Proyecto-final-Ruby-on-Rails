@@ -19,6 +19,15 @@
 .sessions{
        color: dimgray;
 }
+.nav-link{
+       color: dimgray;
+}
+.nav-link:hover{
+       border-bottom: solid #96789A 2px;
+       padding-bottom: 5px;
+       font-weight: bold;
+       transition-duration: 0.2s;
+}
 .sessions:hover{
        color: black;
        text-decoration: none;
@@ -27,15 +36,10 @@
 .smallp{
        font-size: 15px;
 }
-#userperfillink{
-       position: relative;
-       top: 8px;
-}
 /*------------------------------ Header-----------------------------*/
 #logo{
        width: 500px;
        position: relative;
-       /* left: 27%; */
        z-index: -1;
 }
 #instagram{
@@ -49,6 +53,22 @@
        left: -40px;
        z-index: 1;
 }
+#admin{
+       border: 1px solid #7B2785;
+       background-color: #7B2785;
+       position: fixed;
+       width: 100px;
+       height: 50px;
+       top: 360px;
+       border-radius: 15px;
+       left: -40px;
+       z-index: 1;
+}
+.fa-user-shield{
+       color: white;
+       margin-left: 50px;
+       margin-top: 8px;
+}
 .fa-instagram{
        color: white;
        margin-left: 55px;
@@ -61,6 +81,9 @@
 #alert-alert{
        z-index: 10;
        top: 60px;
+}
+.admin{
+       background-color: darkseagreen;
 }
 /* --------------------------SOBRE MI ----------------------------------------*/
 #local{
@@ -108,9 +131,12 @@
 }
 /*----------------------------COMENTARIOS----------------------------------*/
 .commentuser{
-       border: 1px solid lightgray ;
-       border-radius: 20px;
-       padding: 20px;
+       border-top: 1px solid lightgray ;
+       border-bottom: 1px solid lightgray ;
+       padding: 40px;
+}
+.imagen-perfil{
+       display: inline;
 }
 /*-----------------------------INFO USUARIO----------------------------------*/
 .infousuario{
@@ -133,6 +159,10 @@
        position: relative;
 
 }
+/*---------------------------DASHBOARD------------------------------------*/
+.dasboard-icon{
+       color: dimgray;
+}
 /* --------------------------MEDIA QUERY ------------------------------------ */
 @media(min-width: 320px) and (max-width: 600px){
        #login-logout{
@@ -154,17 +184,23 @@
        }
        .buttoncart{
               position:absolute;
-              right: 100px;
-              bottom: 20px
+              right: 80px;
+              bottom: -30px
        } 
        .buttonlike{
               position:absolute;
-              right: 30px;
-              bottom: 20px
+              right: 20px;
+              bottom: -30px
        }
        .userphoto{
               position: relative;
               left: 22%;
+       }
+       .imagen-perfil{
+              display: block;
+       }
+       .product{
+              padding: 50px;
        }
 }
 

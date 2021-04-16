@@ -1,12 +1,14 @@
-var main = document.getElementById('comentarios')
+var main = document.getElementById('comen')
 
 var div = document.createElement('div')
 div.setAttribute('class', 'commentuser my-5 bg-light')
 
-var user = document.createElement('p')
+var user = document.createElement('strong')
 var text = document.createElement('p')
 var name_text = document.createTextNode('<%= @comment.user.name %>')
 var text_text = document.createTextNode('<%= @comment.text %>')
+user.setAttribute('class', 'd-inline')
+text.setAttribute('class', 'd-inline')
 
 user.append(name_text)
 text.append(text_text)
