@@ -17,6 +17,5 @@
 //= require bootstrap/dist/js/bootstrap.js
 //= require chartkick
 //= require highcharts/highcharts
-//= require fontawesome/all
 //= require_tree .
 FontAwesome.config.mutateApproach = 'sync'
